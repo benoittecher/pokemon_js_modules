@@ -3,5 +3,8 @@ export class Attaque{
         this.name = name;
         this.dmg = dmg;
     }
+    description(){
+        return `name : ${this.name}, dmg : ${this.dmg}`;
+    }
 }
 

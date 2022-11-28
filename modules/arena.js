@@ -1,5 +1,7 @@
-import { Attaque } from "./attaque.js";
-import { Pokemon } from "./pokemon.js";
+import { PokemonService } from "./pokemon-service.js";
+/*import { Pokemon } from "./pokemon.js";
+import { Attaque } from "./attaque.js";*/
+
 function fight(pk1, pk2){
     const fstAtk = Math.random() > 0.5 ? pk1 : pk2;
     const scdAtk = fstAtk == pk1 ? pk2 : pk1;
@@ -15,12 +17,28 @@ function fight(pk1, pk2){
     }
 }
 
-const statik = new Attaque("Statik", 10);
-const paratonnerre = new Attaque("Paratonnerre", 25);
-const adaptabilite = new Attaque("Adaptabilité", 9);
-const anticipation = new Attaque("Anticipation", 15);
-const pikachu = new Pokemon("Pikachu", "025", 40, 6, "électrique", 82, statik, paratonnerre);
-const evoli = new Pokemon("Evoli", "133", 30, 6.5, "normal", 70, adaptabilite, anticipation);
-fight(pikachu, evoli);
+/*const pikachu = new Pokemon("Pikachu", "025", 40, 6, "électrique", 82, new Attaque("Statik", 10), new Attaque("Paratonnerre", 25));
+const evoli = new Pokemon("Evoli", "133", 30, 6.5, "normal", 70, new Attaque("Adaptabilité", 9), new Attaque("Anticipation", 15));*/
+
+const pokeService = new PokemonService();
+/*const pokemon1 = pokeService.create();
+const pokemon2 = pokeService.create(pokemon1.name);
+fight(pokemon1, pokemon2);
+console.log("getByName : ");
+const pikachu = pokeService.getByName("Pikachu");
+console.log("Pikachu : ");
+console.log(pikachu);
+const evoli = pokeService.getByName("Evoli");
+console.log("Evoli : ");
+console.log(evoli);*/
+
+/*console.log("getAll : ");
+const pokemons = pokeService.getAll();
+pokemons.forEach(p => p.presentation());*/
+
+console.log("delete :");
+pokeService.delete("Pikachu");
+pokeService.pokemons.forEach(p => p.presentation());
+
 
 

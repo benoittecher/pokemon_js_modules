@@ -23,4 +23,9 @@ export class Pokemon{
         if(lethal) 
             console.log(this.name + " est victorieux ! Il lui reste " + this.currentHp + "pv !")
     }
+    presentation(){
+        console.log(`name : ${this.name}, number : ${this.number}, height : ${this.height}, weight : ${this.weight}, type : ${this.type}, currentHp : ${this.currentHp}, maxHp : ${this.maxHp}, atk1 : { ${this.atk1.description()} }, atk2 : { ${this.atk2.description()} }`);
+        /*console.log(`atk1 : {name : ${this.atk1.name}, dmg : ${this.atk1.dmg} }`);
+        console.log(`atk2 : {name : ${this.atk2.name}, dmg : ${this.atk2.dmg} }`);*/
+    }
 }
